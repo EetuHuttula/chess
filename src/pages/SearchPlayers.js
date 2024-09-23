@@ -25,14 +25,18 @@ export default function SearchPlayers() {
                 throw new Error('Player not found');
             }
             const data = await res.json();
-            setPlayerInfo(data);
+            const countryUrl = data.country;
+            const countryTag = countryUrl ? countryUrl.split('/').pop() : 'N/A';
+    
+            setPlayerInfo({ ...data, countryTag });
             setError(null);
         } catch (err) {
             setError(err.message);
             setPlayerInfo(null);
+        } finally {
+            setLoading(false);
         }
     };
-
     const fetchPlayerStats = async (username) => {
         try {
             setLoading(true);
@@ -50,8 +54,8 @@ export default function SearchPlayers() {
     };
 
     const handleSearch = async (username) => {
-        setError(null); // Clear any existing errors
-        setPlayerInfo(null); // Reset player info and stats for new searches
+        setError(null);
+        setPlayerInfo(null);
         setPlayerStats(null);
 
         setLoading(true);
@@ -78,8 +82,9 @@ export default function SearchPlayers() {
                 />
                 <button type="submit">Search</button>
             </form>
+           
             </div>
-
+            <p className="searchtext">Search your favourite players</p>
             <div>
                 {loading && <p>Loading...</p>}
                 {error && <p style={{ color: 'red' }}>{error}</p>}
