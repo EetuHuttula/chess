@@ -9,7 +9,7 @@ const SearchBar = () => {
       <h1>Chess.com PlayerSearch</h1>
       </div>
         <div className="links">
-        <Link className="nav_link" to="/">Home</Link>
+        <Link className="nav_link" to="/">Leaderboards</Link>
         <Link className="nav_link" to="/PlayerSearch">Player Search</Link>
         </div>
       
