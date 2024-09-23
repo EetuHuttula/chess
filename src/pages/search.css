@@ -1,6 +1,7 @@
 .bg-dark {
     background-color: #333 !important;
     height: 88vh;
+    text-align: center;
 }
 
 .Search {
@@ -25,4 +26,9 @@ button {
     padding: 10px;
     color: #fff;
     font-size: 20px;
+}
+
+.searchtext {
+    color: #fff;
+    font-size: 22px;
 }
