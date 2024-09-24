@@ -15,6 +15,7 @@ const PlayerInfo = ({ playerInfo, formatLastOnline }) => {
       <h2 className="bread">Player Info</h2>
       <p className="bread">Followers: {playerInfo.followers}</p>
       <p className="bread">Status: {playerInfo.status}</p>
+      <p className="bread">Location: {playerInfo.location}</p>
       <p>Country: {playerInfo.countryTag}</p>
       {playerInfo.joined && (
         <p className="bread" >Join Date: {formatLastOnline(playerInfo.joined)}</p>
