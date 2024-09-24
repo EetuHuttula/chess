@@ -65,7 +65,12 @@ export default function SearchPlayers() {
 
     const formatLastOnline = (timestamp) => {
         const date = new Date(timestamp * 1000);
-        return date.toLocaleString();
+        
+  
+        const formattedDate = date.toLocaleDateString(); // returns only the date part
+        const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        return `${formattedDate}, ${formattedTime}`;
     };
 
     return (

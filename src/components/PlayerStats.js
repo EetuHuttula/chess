@@ -30,11 +30,6 @@ const PlayerStats = ({ playerStats}) => {
                     <p>Rating: {playerStats.chess_bullet?.last?.rating}</p>
                     <p>Best Rating: {playerStats.chess_bullet?.best?.rating}</p>
                 </div>
-                
-                <div className="box">
-                    <h3>Puzzle Rush</h3>
-                    <p>Best Score: {playerStats.puzzle_rush?.best?.total_attempts}</p>
-                </div>
             </div>
         </>
     );
